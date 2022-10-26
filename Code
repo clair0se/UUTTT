@@ -115,35 +115,35 @@ upper = [middleUpright, middleUpmid, middleUpleft, middleMidright, middleMidmid,
 
 print("Welcome to Ultimate Ultimate Tic Tac Toe!")
 while True:
-    print("If you don't know how to play this game or have never heard of it, input \"R\" to see the rules.")
-    print("If you would like to play against the computer, input \"1\".")
-    print("If you would like to play against another player, input \"2\".")
-    selection = input("Input: ")
-    selection = selection.lower()
-    if selection == "1" or selection == "2" or selection == "r":
-        break
-    else:
-        print("Please input one of the chioces of input.")
+	print("If you don't know how to play this game or have never heard of it, input \"R\" to see the rules.")
+	print("If you would like to play against the computer, input \"1\".")
+	print("If you would like to play against another player, input \"2\".")
+	selection = input("Input: ")
+	selection = selection.lower()
+	if selection == "1" or selection == "2" or selection == "r":
+		break
+	else:
+		print("Please input one of the chioces of input.")
 if selection == "r":
-    print("\nRules:")
-    print("If you have ever played Ultimate Tic Tac Toe you might be able to get the gist of what Ultimate Ultimate Tic Tac Toe is. However, for the uninitiated, it is easier to explain what Ultimate Tic Tac Toe is first:")
-    print("\nIn Ultimate Tic Tac Toe there is essentially 2 layers of Tic Tac Toe boards. A larger one, and a board inside each square of that larger board. To win, you must create a line on the large board and you do that by winning 3 of the smaller boards. When you win a smaller board, your icon (X or O) goes up a layer, being placed in the square that that board you just won was on. However, there is another rule to Ultimate Tic Tac Toe that makes the board layers interact with eachother. Lets say you start the game by placing an X in the top middle space in the inner board and in the board that is in the middle space of the upper board. The other player would then be required to play in the board that is on the upper middle square of the upper layer board. The only times you aren't held to that rule is the first move of the game and when the redirection would bring you to a square that either has been won, or ended in a cat game. In either of those events, you my choose any open square to play in.")
-    print("\nNow, the step to Ultimate Ultimate Tic Tac Toe is fairly simple to understand. There is an Ultimate Tic Tac Toe board put into each square of another higher layer board. The last nuance to understand with this jump is how this new layer can be interacted with from the lower layers. The low layer can only effect the middle layer, and the middle layer can effect the upper layer (in terms of which square will be played in next).")
-    print("\nI hope you enjoy the game experience!")
-    print("\nNow, would you like to play against the computer, or another person?")
-    while True:
-        print("To play against a computer, input \"1\".")
-        print("To play against another person, input \"2\".")
-        selection = input("Input: ")
-        if selection == "1" or selection == "2":
-            break
-        else:
-            print("Please input one of the chioces of input.")
+	print("\nRules:")
+	print("If you have ever played Ultimate Tic Tac Toe you might be able to get the gist of what Ultimate Ultimate Tic Tac Toe is. However, for the uninitiated, it is easier to explain what Ultimate Tic Tac Toe is first:")
+	print("\nIn Ultimate Tic Tac Toe there is essentially 2 layers of Tic Tac Toe boards. A larger one, and a board inside each square of that larger board. To win, you must create a line on the large board and you do that by winning 3 of the smaller boards. When you win a smaller board, your icon (X or O) goes up a layer, being placed in the square that that board you just won was on. However, there is another rule to Ultimate Tic Tac Toe that makes the board layers interact with eachother. Lets say you start the game by placing an X in the top middle space in the inner board and in the board that is in the middle space of the upper board. The other player would then be required to play in the board that is on the upper middle square of the upper layer board. The only times you aren't held to that rule is the first move of the game and when the redirection would bring you to a square that either has been won, or ended in a cat game. In either of those events, you my choose any open square to play in.")
+	print("\nNow, the step to Ultimate Ultimate Tic Tac Toe is fairly simple to understand. There is an Ultimate Tic Tac Toe board put into each square of another higher layer board. The last nuance to understand with this jump is how this new layer can be interacted with from the lower layers. The low layer can only effect the middle layer, and the middle layer can effect the upper layer (in terms of which square will be played in next).")
+	print("\nI hope you enjoy the game experience!")
+	print("\nNow, would you like to play against the computer, or another person?")
+	while True:
+		print("To play against a computer, input \"1\".")
+		print("To play against another person, input \"2\".")
+		selection = input("Input: ")
+		if selection == "1" or selection == "2":
+			break
+		else:
+			print("Please input one of the chioces of input.")
 if selection == "1":
-    xTurn = True
-    # loop
-    # do 2 first
-    if xTurn:
-        pass
+	xTurn = True
+	# loop
+	# do 2 first
+	if xTurn:
+		pass
 if selection == "2":
-    pass
+	pass
