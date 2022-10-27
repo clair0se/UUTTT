@@ -139,13 +139,14 @@ if selection == "r":
 			break
 		else:
 			print("Please input one of the chioces of input.")
+xTurn = False
 if selection == "1":
-	xTurn = True
-	# loop
-	# do 2 first
+	xTurn = not(xTurn)
 	if xTurn:
 		pass
 if selection == "2":
+  # switch player (aka xTurn)
+  # 
 	# accept input (For actual gui, for the first move and nonforcing moves (when the forced square is filled) it should inteligently expand to the layer that they should be able to choose from. and if it raises to top from bottom, depending on what middle is chosen, it needs to be able to decide if they are able to pick again or if they will be forced to a lower board)
 	# types of inputs to take (which will just be given in different ways between text based and gui) (this will also be more or less depending on how forcing a move is. should tell how much selection needs to be done (either by being zoomed out more in the gui or with words in text based))
 		# index of upper
