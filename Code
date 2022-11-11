@@ -144,6 +144,7 @@ if selection == "1":
 	xTurn = not(xTurn)
 	if xTurn:
 		pass
+	pass
 if selection == "2":
   # switch player (aka xTurn)
   # 
