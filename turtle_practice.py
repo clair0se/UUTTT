@@ -7,7 +7,7 @@ window.title("Turtle")
 t = turtle.Turtle()
 t.speed(10)
 
-def board(tlCornerX, tlCornerY, len, size):
+def board(tlCornerX, tlCornerY, length, size):
     t.ht()
     t.width(size)
     if size == 1:
@@ -18,34 +18,34 @@ def board(tlCornerX, tlCornerY, len, size):
         t.pencolor("black")
     for i in range(1,3):
         t.up()
-        t.goto(tlCornerX, tlCornerY - (i * len)/3)
+        t.goto(tlCornerX, tlCornerY - (i * length)/3)
         t.down()
-        t.forward(len)
+        t.forward(length)
     t.right(90)
     for i in range(1,3):
         t.up()
-        t.goto(tlCornerX + (i * len)/3, tlCornerY)
+        t.goto(tlCornerX + (i * length)/3, tlCornerY)
         t.down()
-        t.forward(len)
+        t.forward(length)
     t.left(90)
 tlCornerX = -324
 tlCornerY = 324
-len = 72
+length = 72
 size = 1
 flip = True
 for i in range(9):
     for k in range(9):
-        board(tlCornerX, tlCornerY, len, size)
+        board(tlCornerX, tlCornerY, length, size)
         if flip:
-            tlCornerX += len
+            tlCornerX += length
         else:
-            tlCornerX -= len
-    tlCornerY -= len
+            tlCornerX -= length
+    tlCornerY -= length
     flip = not(flip)
     if flip:
-            tlCornerX += len
+            tlCornerX += length
     else:
-        tlCornerX -= len
+        tlCornerX -= length
 
 board(108, -108, 216, 3)
 board(-108, -108, 216, 3)
