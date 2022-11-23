@@ -76,12 +76,40 @@ boo = True
 
 def click(x, y):
     global boo
+    if x >= 0:
+        storex = x
+        xSign = 1
+    else:
+        storex = -1 * x
+        xSign = -1
+    if y >= 0:
+        storey = y
+        ySign = 1
+    else:
+        storey = -1 * y
+        ySign = -1
+    yc = 400
+    xc = 400
+    fy = 0
+    fx = 0
+    for ycoord in range(312, -1, -24):
+        y = abs(storey - ycoord) # y = distance between round and actual
+        # if that distance between is smaller than prev best distance between
+            # set as new best distance between and set current round as final y
+        if y < yc:
+            yc = y
+            fy = ycoord
+    for xcoord in range(312, -1, -24):
+        x = abs(storex - xcoord)
+        if x < xc:
+            xc = x
+            fx = xcoord
     if boo:
-        b.goto(x + 1, y - 15)
+        b.goto((fx * xSign) + 1, (fy * ySign) - 15)
         b.write("o", align="center", font=("Arial", 30, "bold"))
         boo = False
     else:
-        b.goto(x + 1, y - 15)
+        b.goto((fx * xSign) + 1, (fy * ySign) - 15)
         b.write("x", align="center", font=("Arial", 30, "bold"))
         boo = True
         
