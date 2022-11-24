@@ -93,9 +93,7 @@ def click(x, y):
     fy = 0
     fx = 0
     for ycoord in range(312, -1, -24):
-        y = abs(storey - ycoord) # y = distance between round and actual
-        # if that distance between is smaller than prev best distance between
-            # set as new best distance between and set current round as final y
+        y = abs(storey - ycoord)
         if y < yc:
             yc = y
             fy = ycoord
