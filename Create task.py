@@ -251,6 +251,8 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
 	# "o" will be first in my game because i believe on a spiritual level that it should be first
     fx = fx * xSign
     fy = fy * ySign
+    ### need to fix the fact that you can click again. will need to happen after can read from array correctly ###
+    ### will need to do that for each layer but instead of being able to draw for upper layers, not being able to send there ###
     if boo:
         b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center)
         b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
