@@ -5,115 +5,115 @@ import turtle
 
 # Make the board
 # each of the lower varable is a single, traditional board. each middle is a board full of boards. and the upper board is the master board
-lowerUprightUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUprightLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-
-middleUpright = [lowerUprightUpright, lowerUprightUpmid, lowerUprightUpleft, lowerUprightMidright, lowerUprightMidmid, lowerUprightMidleft, lowerUprightLowright, lowerUprightLowmid, lowerUprightLowleft]
-
-lowerUpmidUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpmidLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-
-middleUpmid = [lowerUpmidUpright, lowerUpmidUpmid, lowerUpmidUpleft, lowerUpmidMidright, lowerUpmidMidmid, lowerUpmidMidleft, lowerUpmidLowright, lowerUpmidLowmid, lowerUpmidLowleft]
-
-lowerUpleftUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpleftMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpleftMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpleftUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpleftMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerUpleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpleftMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpleftMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpleftLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-middleUpleft = [lowerUpleftUpright, lowerUpleftUpmid, lowerUpleftUpleft, lowerUpleftMidright, lowerUpleftMidmid, lowerUpleftMidleft, lowerUpleftLowright, lowerUpleftLowmid, lowerUpleftLowleft]
+middleUpleft = [lowerUpleftUpleft, lowerUpleftUpmid, lowerUpleftUpright, lowerUpleftMidleft, lowerUpleftMidmid, lowerUpleftMidright, lowerUpleftLowleft, lowerUpleftLowmid, lowerUpleftLowright]
 
-lowerMidrightUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidrightLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUpmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-middleMidright = [lowerMidrightUpright, lowerMidrightUpmid, lowerMidrightUpleft, lowerMidrightMidright, lowerMidrightMidmid, lowerMidrightMidleft, lowerMidrightLowright, lowerMidrightLowmid, lowerMidrightLowleft]
+middleUpmid = [lowerUpmidUpleft, lowerUpmidUpmid, lowerUpmidUpright, lowerUpmidMidleft, lowerUpmidMidmid, lowerUpmidMidright, lowerUpmidLowleft, lowerUpmidLowmid, lowerUpmidLowright]
 
-lowerMidmidUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidmidLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerUprightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-middleMidmid = [lowerMidmidUpright, lowerMidmidUpmid, lowerMidmidUpleft, lowerMidmidMidright, lowerMidmidMidmid, lowerMidmidMidleft, lowerMidmidLowright, lowerMidmidLowmid, lowerMidmidLowleft]
+middleUpright = [lowerUprightUpleft, lowerUprightUpmid, lowerUprightUpright, lowerUprightMidleft, lowerUprightMidmid, lowerUprightMidright, lowerUprightLowleft, lowerUprightLowmid, lowerUprightLowright]
 
-lowerMidleftUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidleftMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidleftMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidleftUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidleftMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerMidleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidleftMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidleftMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidleftLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-middleMidleft = [lowerMidleftUpright, lowerMidleftUpmid, lowerMidleftUpleft, lowerMidleftMidright, lowerMidleftMidmid, lowerMidleftMidleft, lowerMidleftLowright, lowerMidleftLowmid, lowerMidleftLowleft]
+middleMidleft = [lowerMidleftUpleft, lowerMidleftUpmid, lowerMidleftUpright, lowerMidleftMidleft, lowerMidleftMidmid, lowerMidleftMidright, lowerMidleftLowleft, lowerMidleftLowmid, lowerMidleftLowright]
 
-lowerLowrightUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowrightLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-middleLowright = [lowerLowrightUpright, lowerLowrightUpmid, lowerLowrightUpleft, lowerLowrightMidright, lowerLowrightMidmid, lowerLowrightMidleft, lowerLowrightLowright, lowerLowrightLowmid, lowerLowrightLowleft]
+middleMidmid = [lowerMidmidUpleft, lowerMidmidUpmid, lowerMidmidUpright, lowerMidmidMidleft, lowerMidmidMidmid, lowerMidmidMidright, lowerMidmidLowleft, lowerMidmidLowmid, lowerMidmidLowright]
 
-lowerLowmidUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowmidLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerMidrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-middleLowmid = [lowerLowmidUpright, lowerLowmidUpmid, lowerLowmidUpleft, lowerLowmidMidright, lowerLowmidMidmid, lowerLowmidMidleft, lowerLowmidLowright, lowerLowmidLowmid, lowerLowmidLowleft]
+middleMidright = [lowerMidrightUpleft, lowerMidrightUpmid, lowerMidrightUpright, lowerMidrightMidleft, lowerMidrightMidmid, lowerMidrightMidright, lowerMidrightLowleft, lowerMidrightLowmid, lowerMidrightLowright]
 
-lowerLowleftUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowleftMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowleftMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowleftUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowleftMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-lowerLowleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowleftMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowleftMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowleftLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-middleLowleft = [lowerLowleftUpright, lowerLowleftUpmid, lowerLowleftUpleft, lowerLowleftMidright, lowerLowleftMidmid, lowerLowleftMidleft, lowerLowleftLowright, lowerLowleftLowmid, lowerLowleftLowleft]
+middleLowleft = [lowerLowleftUpleft, lowerLowleftUpmid, lowerLowleftUpright, lowerLowleftMidleft, lowerLowleftMidmid, lowerLowleftMidright, lowerLowleftLowleft, lowerLowleftLowmid, lowerLowleftLowright]
 
-upper = [middleUpright, middleUpmid, middleUpleft, middleMidright, middleMidmid, middleMidleft, middleLowright, middleLowmid, middleLowleft]
+lowerLowmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+
+middleLowmid = [lowerLowmidUpleft, lowerLowmidUpmid, lowerLowmidUpright, lowerLowmidMidleft, lowerLowmidMidmid, lowerLowmidMidright, lowerLowmidLowleft, lowerLowmidLowmid, lowerLowmidLowright]
+
+lowerLowrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightMidleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightMidmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightMidright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightLowleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+lowerLowrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+
+middleLowright = [lowerLowrightUpleft, lowerLowrightUpmid, lowerLowrightUpright, lowerLowrightMidleft, lowerLowrightMidmid, lowerLowrightMidright, lowerLowrightLowleft, lowerLowrightLowmid, lowerLowrightLowright]
+
+upper = [middleUpleft, middleUpmid, middleUpright, middleMidleft, middleMidmid, middleMidright, middleLowleft, middleLowmid, middleLowright]
 
 print("Welcome to Ultimate Ultimate Tic Tac Toe!")
 while True:
@@ -249,16 +249,70 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
             xc = x
             fx = xcoord
 	# "o" will be first in my game because i believe on a spiritual level that it should be first
+    fx = fx * xSign
+    fy = fy * ySign
     if boo:
-        b.goto((fx * xSign) + 1, (fy * ySign) - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center)
+        b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center)
         b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
         boo = False # filps turn
 	# same for "x"
     else:
-        b.goto((fx * xSign) + 1, (fy * ySign) - 15)
+        b.goto(fx + 1, fy - 15)
         b.write("x", align="center", font=("Arial", 30, "bold"))
         boo = True
-        
+    # updating array to be able to use the value
+    help = []
+    for i in range(-13, 14):
+        if fx // 24 == i:
+            i += 13 # so it is indexed 0-26
+            help.append(i)
+            break
+    for i in range(-13, 14):
+        if fy // 24 == i:
+            i += 13
+            help.append(i)
+            break
+    if 0 <= help[0] <= 8:
+        if 0 <= help[1] <= 8:
+            # in upper[6]
+            # "coordinate" is: [help[0], help[1], itteration]
+            # put through 3 deep for loop of a 9
+            pass
+        elif 9 <= help[1] <= 17:
+            # in upper[3]
+            pass
+        else:
+            # in upper[0]
+            pass
+    elif 9 <= help[0] <= 17:
+        if 0 <= help[1] <= 8:
+            # in upper[7]
+            pass
+        elif 9 <= help[1] <= 17:
+            # in upper[4]
+            pass
+        else:
+            # in upper[1]
+            pass
+    else:
+        if 0 <= help[1] <= 8:
+            # in upper[8]
+            pass
+        elif 9 <= help[1] <= 17:
+            # in upper[5]
+            pass
+        else:
+            # in upper[2]
+            pass
+    # put what is shown above into for loop
+    # then, now that it is in a l*w*h kinda situation (more like l*h*w), use that coordinate to map to a position in a lower board
+    # to check, print that through upper[][][] (i think that is the right amount of braces) and print each number to make sure it's going to correct spot
+    # hopefully this will work and i will sing kumbaya with my code (or how ever you spell it)
+    for i in range(3):
+        for k in range(3):
+            pass
+        pass
+
 b.onclick(click)
 
 turtle.mainloop() # i think this is some sort of a loop for turtle. whatever, it works
@@ -271,7 +325,7 @@ turtle.mainloop() # i think this is some sort of a loop for turtle. whatever, it
 				# if there is a win, fill the square
 				# check if there are 3 squares on the upper board
 					# if there are, check for win
-					# if there is win, something something exit and display win message for winning character
+					# if there is win, exit and make a new turtle window displaying winner information
 	# else, continue
 # Now, do logic defining where the next player will have to play
 # Do this by taking the index of the lower board that was played on and sending the other player to that index on the middle board
