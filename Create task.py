@@ -251,18 +251,7 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
 	# "o" will be first in my game because i believe on a spiritual level that it should be first
     fx = fx * xSign
     fy = fy * ySign
-    ### need to fix the fact that you can click again. will need to happen after can read from array correctly ###
-    ### will need to do that for each layer but instead of being able to draw for upper layers, not being able to send there ###
-    if boo:
-        b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center)
-        b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
-        boo = False # filps turn
-	# same for "x"
-    else:
-        b.goto(fx + 1, fy - 15)
-        b.write("x", align="center", font=("Arial", 30, "bold"))
-        boo = True
-    # updating array to be able to use the value
+    # find where it is in terms of the array
     help = []
     for i in range(-13, 14):
         if fx // 24 == i:
@@ -271,14 +260,18 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
             break
     for i in range(-13, 14):
         if fy // 24 == i:
-            i += 13
+            i = abs(i - 13)
             help.append(i)
             break
     if 0 <= help[0] <= 8:
         if 0 <= help[1] <= 8:
             # in upper[6]
-            # "coordinate" is: [help[0], help[1], itteration]
+            # "coordinate" is: [help[0], help[1], help[4]]
             # put through 3 deep for loop of a 9
+                # girl, what did you mean "of a 9"?
+                # i think of a 9x9x9
+                # but i also think that there is a better solution
+                # this sucks and is hard
             pass
         elif 9 <= help[1] <= 17:
             # in upper[3]
@@ -308,17 +301,42 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
             pass
     # put what is shown above into for loop
     # then, now that it is in a l*w*h kinda situation (more like l*h*w), use that coordinate to map to a position in a lower board
+    # upper[help[4]][help[7]][help[8]]
     # to check, print that through upper[][][] (i think that is the right amount of braces) and print each number to make sure it's going to correct spot
     # hopefully this will work and i will sing kumbaya with my code (or how ever you spell it)
     for i in range(3):
-        for k in range(3):
-            pass
-        pass
+        if 9 * i <= help[0] <= (9 * (i+1)) - 1:
+            help.append(i)
+            for k in range(3):
+                if 9 * k <= help[1] <= (9 * (k+1)) - 1:
+                    help.append(k)
+                    help.append(help[2] + (help[3] * 3))
+    for i in range(9):
+        if 3 * i <= help[0] <= (3 * (i+1)) - 1:
+            help.append(i)
+            for k in range(9):
+                if 3 * k <= help[1] <= (3 * (k+1)) - 1:
+                    help.append(k)
+                    help.append(((help[5] % 3) + (help[6] * 3)) % 9)
+    help.append(((help[0] % 3) + (help[1] * 3)) % 9)
+    ### need to fix the fact that you can click again. will need to happen after can read from array correctly ###
+    ### will need to do that for each layer but instead of being able to draw for upper layers, not being able to send there ###
+    if upper[help[4]][help[7]][help[8]] == "-":
+        if boo:
+            upper[help[4]][help[7]][help[8]] = "o"
+            b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center)
+            b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+            boo = False # filps turn
+        # same for "x"
+        else:
+            upper[help[4]][help[7]][help[8]] = "x"
+            b.goto(fx + 1, fy - 15)
+            b.write("x", align="center", font=("Arial", 30, "bold"))
+            boo = True
 
 b.onclick(click)
 
 turtle.mainloop() # i think this is some sort of a loop for turtle. whatever, it works
-# Then, depending on if xTurn is True or not (which will start on (even though i think O's should go first but i will stick to tradition. bleh)) it will place the correct character in the selected spot
 # Then it will check if there are 3 characters in that board
 	# if so, check each combination for a win
 		# if there is a win, fill the square
