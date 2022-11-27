@@ -1,10 +1,14 @@
 # Claire Delavan
-# etc
+# CSCI 101 Section F
+# Create Project
+# References: Caitlin giving me ideas on how to make it easier from a user end and Maggie for suggesting that i could just use turtle instead of worrying about pygame
+# Time: idk like 2 minutes probably
 
 import turtle
 
 # Make the board
 # each of the lower varable is a single, traditional board. each middle is a board full of boards. and the upper board is the master board
+# additionally, the "Board" things are for testing for wins because it will be a lot easier to do it this way
 lowerUpleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpleftUpright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -16,6 +20,7 @@ lowerUpleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleUpleft = [lowerUpleftUpleft, lowerUpleftUpmid, lowerUpleftUpright, lowerUpleftMidleft, lowerUpleftMidmid, lowerUpleftMidright, lowerUpleftLowleft, lowerUpleftLowmid, lowerUpleftLowright]
+middleUpleftBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerUpmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -28,6 +33,7 @@ lowerUpmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleUpmid = [lowerUpmidUpleft, lowerUpmidUpmid, lowerUpmidUpright, lowerUpmidMidleft, lowerUpmidMidmid, lowerUpmidMidright, lowerUpmidLowleft, lowerUpmidLowmid, lowerUpmidLowright]
+middleUpmidBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerUprightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUprightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -40,6 +46,7 @@ lowerUprightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUprightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleUpright = [lowerUprightUpleft, lowerUprightUpmid, lowerUprightUpright, lowerUprightMidleft, lowerUprightMidmid, lowerUprightMidright, lowerUprightLowleft, lowerUprightLowmid, lowerUprightLowright]
+middleUprightBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerMidleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -52,6 +59,7 @@ lowerMidleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleMidleft = [lowerMidleftUpleft, lowerMidleftUpmid, lowerMidleftUpright, lowerMidleftMidleft, lowerMidleftMidmid, lowerMidleftMidright, lowerMidleftLowleft, lowerMidleftLowmid, lowerMidleftLowright]
+middleMidleftBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerMidmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -64,6 +72,7 @@ lowerMidmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleMidmid = [lowerMidmidUpleft, lowerMidmidUpmid, lowerMidmidUpright, lowerMidmidMidleft, lowerMidmidMidmid, lowerMidmidMidright, lowerMidmidLowleft, lowerMidmidLowmid, lowerMidmidLowright]
+middleMidmidBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerMidrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -76,6 +85,7 @@ lowerMidrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleMidright = [lowerMidrightUpleft, lowerMidrightUpmid, lowerMidrightUpright, lowerMidrightMidleft, lowerMidrightMidmid, lowerMidrightMidright, lowerMidrightLowleft, lowerMidrightLowmid, lowerMidrightLowright]
+middleMidrightBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerLowleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -88,6 +98,7 @@ lowerLowleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleLowleft = [lowerLowleftUpleft, lowerLowleftUpmid, lowerLowleftUpright, lowerLowleftMidleft, lowerLowleftMidmid, lowerLowleftMidright, lowerLowleftLowleft, lowerLowleftLowmid, lowerLowleftLowright]
+middleLowleftBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerLowmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -100,6 +111,7 @@ lowerLowmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleLowmid = [lowerLowmidUpleft, lowerLowmidUpmid, lowerLowmidUpright, lowerLowmidMidleft, lowerLowmidMidmid, lowerLowmidMidright, lowerLowmidLowleft, lowerLowmidLowmid, lowerLowmidLowright]
+middleLowmidBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerLowrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -112,8 +124,10 @@ lowerLowrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleLowright = [lowerLowrightUpleft, lowerLowrightUpmid, lowerLowrightUpright, lowerLowrightMidleft, lowerLowrightMidmid, lowerLowrightMidright, lowerLowrightLowleft, lowerLowrightLowmid, lowerLowrightLowright]
+middleLowrightBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 upper = [middleUpleft, middleUpmid, middleUpright, middleMidleft, middleMidmid, middleMidright, middleLowleft, middleLowmid, middleLowright]
+upperBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 print("Welcome to Ultimate Ultimate Tic Tac Toe!")
 while True:
@@ -142,34 +156,37 @@ if selection == "r":
 # build board
 # Preliminaries
 window = turtle.Screen()
-window.setup(648,648) # (6**4)/2 so it is "small" but easily divisible by 2 and 3
+window.setup(648,648) # (6**4)/2 so it is "small" but easily divisible by 2 and 3 a lot
 window.bgcolor("white")
 window.title("Ultimate Ultimate Tik Tac Toe")
 t = turtle.Turtle()
-t.speed(0)
+t.speed(0) # speeeeeeeeeeeeed
 
 # basically defines the parameters of a tic tac toe board
 def board(tlCornerX, tlCornerY, length, size):
     t.ht()
     t.width(size)
+    # uses the size variable to decide what color to make the line (darker for wider)
     if size == 1:
         t.pencolor("darkgrey")
     elif size == 3:
         t.pencolor("slategrey")
     else:
         t.pencolor("black")
+    # draws the 2 horizontal lines
     for i in range(1,3):
         t.up()
         t.goto(tlCornerX, tlCornerY - (i * length)/3)
         t.down()
         t.forward(length)
-    t.right(90)
+    t.right(90) # prepares for other directio
+    # draws the 2 vertical lines
     for i in range(1,3):
         t.up()
         t.goto(tlCornerX + (i * length)/3, tlCornerY)
         t.down()
         t.forward(length)
-    t.left(90)
+    t.left(90) # sets the rotation back to starting
 
 # small boards
 tlCornerX = -324
@@ -252,79 +269,38 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
     fx = fx * xSign
     fy = fy * ySign
     # find where it is in terms of the array
-    help = []
+    help = [] # where i will be storing a ton of helpful values that will be used later down the line
     for i in range(-13, 14):
         if fx // 24 == i:
             i += 13 # so it is indexed 0-26
-            help.append(i)
+            help.append(i) # x coordinate indexed 0-26
             break
     for i in range(-13, 14):
         if fy // 24 == i:
-            i = abs(i - 13)
-            help.append(i)
+            i = abs(i - 13) # if i added 13 my (0,0) corner would be bottom left and i want it to be top left so i do it like this
+            help.append(i) # y coordinate indexed 0-26
             break
-    if 0 <= help[0] <= 8:
-        if 0 <= help[1] <= 8:
-            # in upper[6]
-            # "coordinate" is: [help[0], help[1], help[4]]
-            # put through 3 deep for loop of a 9
-                # girl, what did you mean "of a 9"?
-                # i think of a 9x9x9
-                # but i also think that there is a better solution
-                # this sucks and is hard
-            pass
-        elif 9 <= help[1] <= 17:
-            # in upper[3]
-            pass
-        else:
-            # in upper[0]
-            pass
-    elif 9 <= help[0] <= 17:
-        if 0 <= help[1] <= 8:
-            # in upper[7]
-            pass
-        elif 9 <= help[1] <= 17:
-            # in upper[4]
-            pass
-        else:
-            # in upper[1]
-            pass
-    else:
-        if 0 <= help[1] <= 8:
-            # in upper[8]
-            pass
-        elif 9 <= help[1] <= 17:
-            # in upper[5]
-            pass
-        else:
-            # in upper[2]
-            pass
-    # put what is shown above into for loop
-    # then, now that it is in a l*w*h kinda situation (more like l*h*w), use that coordinate to map to a position in a lower board
-    # upper[help[4]][help[7]][help[8]]
-    # to check, print that through upper[][][] (i think that is the right amount of braces) and print each number to make sure it's going to correct spot
-    # hopefully this will work and i will sing kumbaya with my code (or how ever you spell it)
     for i in range(3):
         if 9 * i <= help[0] <= (9 * (i+1)) - 1:
-            help.append(i)
+            help.append(i) # x coordinate indexed 0-2
             for k in range(3):
                 if 9 * k <= help[1] <= (9 * (k+1)) - 1:
-                    help.append(k)
-                    help.append(help[2] + (help[3] * 3))
+                    help.append(k) # y coordinate indexed 0-2
+                    help.append(help[2] + (help[3] * 3)) # index in upper board (variable upper) that the click is in aka which mid board it is in
     for i in range(9):
         if 3 * i <= help[0] <= (3 * (i+1)) - 1:
-            help.append(i)
+            help.append(i) # x coordinate indexed 0-8
             for k in range(9):
                 if 3 * k <= help[1] <= (3 * (k+1)) - 1:
-                    help.append(k)
-                    help.append(((help[5] % 3) + (help[6] * 3)) % 9)
-    help.append(((help[0] % 3) + (help[1] * 3)) % 9)
-    ### need to fix the fact that you can click again. will need to happen after can read from array correctly ###
+                    help.append(k) # y coordinate indexed 0-8
+                    help.append(((help[5] % 3) + (help[6] * 3)) % 9) # index of mid board aka which lower board it is in
+    help.append(((help[0] % 3) + (help[1] * 3)) % 9) # index of the lower board (all the way down to the correct square in array form! woo!)
+    ### need to fix the fact that you can click again. will need to happen after can read from array correctly ### (done but keeping here until done with lower thing)
     ### will need to do that for each layer but instead of being able to draw for upper layers, not being able to send there ###
     if upper[help[4]][help[7]][help[8]] == "-":
         if boo:
             upper[help[4]][help[7]][help[8]] = "o"
-            b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center)
+            b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
             b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
             boo = False # filps turn
         # same for "x"
@@ -333,6 +309,8 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
             b.goto(fx + 1, fy - 15)
             b.write("x", align="center", font=("Arial", 30, "bold"))
             boo = True
+    # check if checking for a win is needed
+
 
 b.onclick(click)
 
