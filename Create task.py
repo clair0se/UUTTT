@@ -329,3 +329,5 @@ turtle.mainloop() # i think this is some sort of a loop for turtle. whatever, it
 # Do this by taking the index of the lower board that was played on and sending the other player to that index on the middle board
 # if that isn't an acceptable square, send user to middle level and accept 2 inputs
 	# if that isn't an acceptable square, send to upper layer and accept 3 inputs (which, this goes for all layers, there needs to be a check for if the layer selected is allowed)
+# examples on unplayable boards are either boards that are won or boards that ended in a cat game
+    # also, just to be sure, also don't want someone to be able to play on a board lower than a board that has been won. just as redundancy
