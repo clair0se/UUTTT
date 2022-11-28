@@ -20,7 +20,6 @@ lowerUpleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleUpleft = [lowerUpleftUpleft, lowerUpleftUpmid, lowerUpleftUpright, lowerUpleftMidleft, lowerUpleftMidmid, lowerUpleftMidright, lowerUpleftLowleft, lowerUpleftLowmid, lowerUpleftLowright]
-middleUpleftBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerUpmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -33,7 +32,6 @@ lowerUpmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUpmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleUpmid = [lowerUpmidUpleft, lowerUpmidUpmid, lowerUpmidUpright, lowerUpmidMidleft, lowerUpmidMidmid, lowerUpmidMidright, lowerUpmidLowleft, lowerUpmidLowmid, lowerUpmidLowright]
-middleUpmidBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerUprightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUprightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -46,7 +44,6 @@ lowerUprightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerUprightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleUpright = [lowerUprightUpleft, lowerUprightUpmid, lowerUprightUpright, lowerUprightMidleft, lowerUprightMidmid, lowerUprightMidright, lowerUprightLowleft, lowerUprightLowmid, lowerUprightLowright]
-middleUprightBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerMidleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -59,7 +56,6 @@ lowerMidleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleMidleft = [lowerMidleftUpleft, lowerMidleftUpmid, lowerMidleftUpright, lowerMidleftMidleft, lowerMidleftMidmid, lowerMidleftMidright, lowerMidleftLowleft, lowerMidleftLowmid, lowerMidleftLowright]
-middleMidleftBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerMidmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -72,7 +68,6 @@ lowerMidmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleMidmid = [lowerMidmidUpleft, lowerMidmidUpmid, lowerMidmidUpright, lowerMidmidMidleft, lowerMidmidMidmid, lowerMidmidMidright, lowerMidmidLowleft, lowerMidmidLowmid, lowerMidmidLowright]
-middleMidmidBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerMidrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -85,7 +80,6 @@ lowerMidrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerMidrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleMidright = [lowerMidrightUpleft, lowerMidrightUpmid, lowerMidrightUpright, lowerMidrightMidleft, lowerMidrightMidmid, lowerMidrightMidright, lowerMidrightLowleft, lowerMidrightLowmid, lowerMidrightLowright]
-middleMidrightBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerLowleftUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowleftUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -98,7 +92,6 @@ lowerLowleftLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowleftLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleLowleft = [lowerLowleftUpleft, lowerLowleftUpmid, lowerLowleftUpright, lowerLowleftMidleft, lowerLowleftMidmid, lowerLowleftMidright, lowerLowleftLowleft, lowerLowleftLowmid, lowerLowleftLowright]
-middleLowleftBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerLowmidUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowmidUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -111,7 +104,6 @@ lowerLowmidLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowmidLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleLowmid = [lowerLowmidUpleft, lowerLowmidUpmid, lowerLowmidUpright, lowerLowmidMidleft, lowerLowmidMidmid, lowerLowmidMidright, lowerLowmidLowleft, lowerLowmidLowmid, lowerLowmidLowright]
-middleLowmidBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 lowerLowrightUpleft = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowrightUpmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -124,10 +116,8 @@ lowerLowrightLowmid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 lowerLowrightLowright = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 middleLowright = [lowerLowrightUpleft, lowerLowrightUpmid, lowerLowrightUpright, lowerLowrightMidleft, lowerLowrightMidmid, lowerLowrightMidright, lowerLowrightLowleft, lowerLowrightLowmid, lowerLowrightLowright]
-middleLowrightBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 upper = [middleUpleft, middleUpmid, middleUpright, middleMidleft, middleMidmid, middleMidright, middleLowleft, middleLowmid, middleLowright]
-upperBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 print("Welcome to Ultimate Ultimate Tic Tac Toe!")
 while True:
@@ -233,6 +223,180 @@ b.fillcolor('') # makes it clear so it's just a mask above the board. kinda like
 
 boo = True # turn tracker (boo for boolean)
 
+# function to check for a middle win/ play on upper
+def playUpper(character, arr1):
+    global upper
+    count = 0
+    for i in range(9):
+        if upper[arr1][i] == "x" or upper[arr1][i] == "o":
+            count += 1
+    if count > 2:
+        if upper[arr1][0] == character and upper[arr1][1] == character and upper[arr1][2] == character:
+            # top row win
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)), (324 - ((arr1 // 3) * 216)) - 36)
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.down()
+            t.forward(216)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold"))
+        if upper[arr1][3] == character and upper[arr1][4] == character and upper[arr1][5] == character:
+            # middle row win
+            pass
+        if upper[arr1][6] == character and upper[arr1][7] == character and upper[arr1][8] == character:
+            # bottom row win
+            pass
+        if upper[arr1][0] == character and upper[arr1][3] == character and upper[arr1][6] == character:
+            # left column win
+            pass
+        if upper[arr1][1] == character and upper[arr1][4] == character and upper[arr1][7] == character:
+            # middle column win
+            pass
+        if upper[arr1][2] == character and upper[arr1][5] == character and upper[arr1][8] == character:
+            # right column win
+            pass
+        if upper[arr1][0] == character and upper[arr1][4] == character and upper[arr1][8] == character:
+            # top left diag win
+            pass
+        if upper[arr1][6] == character and upper[arr1][4] == character and upper[arr1][2] == character:
+            # top right diag win
+            pass
+
+# function to check for a lower win/ play on middle board
+# has to come before the main click function because it will be used in the click function to save lines of code so i don't have to write basically the same code in 2 halves of an if statement
+def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upper, 2nd coordinate of upper, 3rd coordinate of upper
+    global upper
+    count = 0
+    for i in range(9):
+        if upper[arr1][arr2][i] != "-":
+            count += 1
+    if count > 2:
+        if upper[arr1][arr2][0] == character and upper[arr1][arr2][1] == character and upper[arr1][arr2][2] == character:
+            # top row win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 12)
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.forward(72)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
+        if upper[arr1][arr2][3] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][5] == character:
+            # middle row win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 36)
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.forward(72)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
+        if upper[arr1][arr2][6] == character and upper[arr1][arr2][7] == character and upper[arr1][arr2][8] == character:
+            # bottom row win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 60)
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.forward(72)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
+        if upper[arr1][arr2][0] == character and upper[arr1][arr2][3] == character and upper[arr1][arr2][6] == character:
+            # left column win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 12, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.right(90)
+            t.forward(72)
+            t.left(90)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
+        if upper[arr1][arr2][1] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][7] == character:
+            # middle column win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 36, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.right(90)
+            t.forward(72)
+            t.left(90)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
+        if upper[arr1][arr2][2] == character and upper[arr1][arr2][5] == character and upper[arr1][arr2][8] == character:
+            # right column win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 60, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.right(90)
+            t.forward(72)
+            t.left(90)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
+        if upper[arr1][arr2][0] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][8] == character:
+            # top left diag win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.right(45)
+            t.forward(102)
+            t.left(45)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
+        if upper[arr1][arr2][2] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][6] == character:
+            # top right diag win
+            upper[arr1][arr2] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 72)
+            t.pencolor("deepskyblue")
+            t.pensize(3)
+            t.speed(1)
+            t.down()
+            t.left(45)
+            t.forward(102)
+            t.right(45)
+            b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
+            b.write(character, align="center", font=("Arial", 120, "bold"))
+            playUpper(character, arr1)
 def click(x, y): # I think this will have to be like, the rest of my code. because ideally it does all of the checking and logic right after the click and I don't know how to do that with like, being in the mainloop thing.
     global boo # apparently, you can actually use global variables in functions
 	# makes each coordinate in the 1st quadrent but stores it's sign to reapply later
@@ -310,6 +474,10 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
             b.write("x", align="center", font=("Arial", 30, "bold"))
             boo = True
     # check if checking for a win is needed
+    if boo:
+        playMiddle("x", help[4], help[7])
+    else:
+        playMiddle("o", help[4], help[7])
 
 
 b.onclick(click)
