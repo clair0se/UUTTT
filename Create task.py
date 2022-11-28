@@ -4,6 +4,9 @@
 # References: Caitlin giving me ideas on how to make it easier from a user end and Maggie for suggesting that i could just use turtle instead of worrying about pygame
 # Time: idk like 2 minutes probably
 
+# things to fix
+    # the fact that placing things creates deadspace and makes it harder/ impossible to place things some places
+
 import turtle
 
 # Make the board
@@ -246,25 +249,105 @@ def playUpper(character, arr1):
             b.write(character, align="center", font=("Arial", 360, "bold"))
         if upper[arr1][3] == character and upper[arr1][4] == character and upper[arr1][5] == character:
             # middle row win
-            pass
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)), (324 - ((arr1 // 3) * 216)) - 108)
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.down()
+            t.forward(216)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold"))
         if upper[arr1][6] == character and upper[arr1][7] == character and upper[arr1][8] == character:
             # bottom row win
-            pass
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)), (324 - ((arr1 // 3) * 216)) - 180)
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.down()
+            t.forward(216)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold")) 
         if upper[arr1][0] == character and upper[arr1][3] == character and upper[arr1][6] == character:
             # left column win
-            pass
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + 36, (324 - ((arr1 // 3) * 216)))
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.right(90)
+            t.down()
+            t.forward(216)
+            t.left(90)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold")) 
         if upper[arr1][1] == character and upper[arr1][4] == character and upper[arr1][7] == character:
             # middle column win
-            pass
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + 108, (324 - ((arr1 // 3) * 216)))
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.right(90)
+            t.down()
+            t.forward(216)
+            t.left(90)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold")) 
         if upper[arr1][2] == character and upper[arr1][5] == character and upper[arr1][8] == character:
             # right column win
-            pass
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)) + 180, (324 - ((arr1 // 3) * 216)))
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.right(90)
+            t.down()
+            t.forward(216)
+            t.left(90)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold")) 
         if upper[arr1][0] == character and upper[arr1][4] == character and upper[arr1][8] == character:
             # top left diag win
-            pass
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)), (324 - ((arr1 // 3) * 216)))
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.right(45)
+            t.down()
+            t.forward(306)
+            t.left(45)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold")) 
         if upper[arr1][6] == character and upper[arr1][4] == character and upper[arr1][2] == character:
             # top right diag win
-            pass
+            upper[arr1] = character
+            t.up()
+            t.speed(0)
+            t.goto((-324 + ((arr1 % 3) * 216)), (324 - ((arr1 // 3) * 216)) - 216)
+            t.pencolor("royalblue")
+            t.pensize(5)
+            t.speed(1)
+            t.left(45)
+            t.down()
+            t.forward(306)
+            t.right(45)
+            b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
+            b.write(character, align="center", font=("Arial", 360, "bold")) 
 
 # function to check for a lower win/ play on middle board
 # has to come before the main click function because it will be used in the click function to save lines of code so i don't have to write basically the same code in 2 halves of an if statement
