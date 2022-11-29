@@ -5,10 +5,8 @@
 # Time: idk like 2 minutes probably
 
 # things to fix
-    # the fact that placing things creates deadspace and makes it harder/ impossible to place things some places
-        # could just do this by moving it off to the side after making a letter. seems to only make deadarea above an bleow (chock it up to letters being silly)
     # if you like, short circut the drawing of a won board, it mis places the thing where you clicked. lowest possible priority for this because it really shouldn't happen
-
+        # will likely not do this lmao. keeping here for the time being
 import turtle
 
 # Make the board
@@ -228,6 +226,15 @@ b.fillcolor('') # makes it clear so it's just a mask above the board. kinda like
 
 boo = True # turn tracker (boo for boolean)
 
+# making the win statement but a function because i'm lazy and a lazy coder is a good one
+def winwindow(character):
+    for i in range(20):
+        print()
+    window.bye()
+    character = character.upper()
+    print(f"Good job player {character}!!! I personally am proud of you for winning <3")
+    print()
+
 # function to check for an ultimate (ultimate) win
 def win(character):
     global upper
@@ -247,6 +254,7 @@ def win(character):
             t.speed(1)
             t.down()
             t.forward(648)
+            winwindow(character)
         if upper[3] == character and upper[4] == character and upper[5] == character:
             # middle row win
             upper = character
@@ -258,6 +266,7 @@ def win(character):
             t.speed(1)
             t.down()
             t.forward(648)
+            winwindow(character)
         if upper[6] == character and upper[7] == character and upper[8] == character:
             # bottom row win
             upper = character
@@ -269,6 +278,7 @@ def win(character):
             t.speed(1)
             t.down()
             t.forward(648)
+            winwindow(character)
         if upper[0] == character and upper[3] == character and upper[6] == character:
             # left column win
             upper = character
@@ -282,6 +292,7 @@ def win(character):
             t.down()
             t.forward(648)
             t.left(90)
+            winwindow(character)
         if upper[1] == character and upper[4] == character and upper[7] == character:
             # middle column win
             upper = character
@@ -295,6 +306,7 @@ def win(character):
             t.down()
             t.forward(648)
             t.left(90)
+            winwindow(character)
         if upper[2] == character and upper[5] == character and upper[8] == character:
             # right column win
             upper = character
@@ -308,6 +320,7 @@ def win(character):
             t.down()
             t.forward(648)
             t.left(90)
+            winwindow(character)
         if upper[0] == character and upper[4] == character and upper[8] == character:
             # top left diag win
             upper = character
@@ -321,6 +334,7 @@ def win(character):
             t.down()
             t.forward(916)
             t.left(45)
+            winwindow(character)
         if upper[6] == character and upper[4] == character and upper[2] == character:
             # top right diag win
             upper = character
@@ -334,6 +348,7 @@ def win(character):
             t.down()
             t.forward(916)
             t.right(45)
+            winwindow(character)
 
 # function to check for a middle win/ play on upper
 def playUpper(character, arr1):
@@ -356,6 +371,7 @@ def playUpper(character, arr1):
             t.forward(216)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            b.goto(-540, 0)
             win(character)
         if upper[arr1][3] == character and upper[arr1][4] == character and upper[arr1][5] == character:
             # middle row win
@@ -370,6 +386,7 @@ def playUpper(character, arr1):
             t.forward(216)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            b.goto(-540, 0)
             win(character)
         if upper[arr1][6] == character and upper[arr1][7] == character and upper[arr1][8] == character:
             # bottom row win
@@ -384,6 +401,7 @@ def playUpper(character, arr1):
             t.forward(216)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold")) 
+            b.goto(-540, 0)
             win(character)
         if upper[arr1][0] == character and upper[arr1][3] == character and upper[arr1][6] == character:
             # left column win
@@ -400,6 +418,7 @@ def playUpper(character, arr1):
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold")) 
+            b.goto(-540, 0)
             win(character)
         if upper[arr1][1] == character and upper[arr1][4] == character and upper[arr1][7] == character:
             # middle column win
@@ -416,6 +435,7 @@ def playUpper(character, arr1):
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            b.goto(-540, 0)
             win(character) 
         if upper[arr1][2] == character and upper[arr1][5] == character and upper[arr1][8] == character:
             # right column win
@@ -432,6 +452,7 @@ def playUpper(character, arr1):
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            b.goto(-540, 0)
             win(character) 
         if upper[arr1][0] == character and upper[arr1][4] == character and upper[arr1][8] == character:
             # top left diag win
@@ -448,6 +469,7 @@ def playUpper(character, arr1):
             t.left(45)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            b.goto(-540, 0)
             win(character) 
         if upper[arr1][6] == character and upper[arr1][4] == character and upper[arr1][2] == character:
             # top right diag win
@@ -464,6 +486,7 @@ def playUpper(character, arr1):
             t.right(45)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            b.goto(-540, 0)
             win(character) 
 
 # function to check for a lower win/ play on middle board
@@ -488,6 +511,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.forward(72)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
         if upper[arr1][arr2][3] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][5] == character:
             # middle row win
@@ -502,6 +526,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.forward(72)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
         if upper[arr1][arr2][6] == character and upper[arr1][arr2][7] == character and upper[arr1][arr2][8] == character:
             # bottom row win
@@ -516,6 +541,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.forward(72)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
         if upper[arr1][arr2][0] == character and upper[arr1][arr2][3] == character and upper[arr1][arr2][6] == character:
             # left column win
@@ -532,6 +558,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
         if upper[arr1][arr2][1] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][7] == character:
             # middle column win
@@ -548,6 +575,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
         if upper[arr1][arr2][2] == character and upper[arr1][arr2][5] == character and upper[arr1][arr2][8] == character:
             # right column win
@@ -564,6 +592,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
         if upper[arr1][arr2][0] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][8] == character:
             # top left diag win
@@ -580,6 +609,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.left(45)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
         if upper[arr1][arr2][2] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][6] == character:
             # top right diag win
@@ -596,6 +626,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             t.right(45)
             b.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 38, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 93)
             b.write(character, align="center", font=("Arial", 120, "bold"))
+            b.goto(-540, 0)
             playUpper(character, arr1)
 def click(x, y): # I think this will have to be like, the rest of my code. because ideally it does all of the checking and logic right after the click and I don't know how to do that with like, being in the mainloop thing.
     global boo # apparently, you can actually use global variables in functions
@@ -666,12 +697,14 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
             upper[help[4]][help[7]][help[8]] = "o"
             b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
             b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+            b.goto(-540, 0)
             boo = False # filps turn
         # same for "x"
         else:
             upper[help[4]][help[7]][help[8]] = "x"
             b.goto(fx + 1, fy - 15)
             b.write("x", align="center", font=("Arial", 30, "bold"))
+            b.goto(-540, 0)
             boo = True
     # check if checking for a win is needed
     if boo:
@@ -683,16 +716,7 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
 b.onclick(click)
 
 turtle.mainloop() # i think this is some sort of a loop for turtle. whatever, it works
-# Then it will check if there are 3 characters in that board
-	# if so, check each combination for a win
-		# if there is a win, fill the square
-		# also, check if there are 3 squares on that layer of board
-			# if there are, check for win
-				# if there is a win, fill the square
-				# check if there are 3 squares on the upper board
-					# if there are, check for win
-					# if there is win, exit and make a new turtle window displaying winner information
-	# else, continue
+
 # Now, do logic defining where the next player will have to play
 # Do this by taking the index of the lower board that was played on and sending the other player to that index on the middle board
 # if that isn't an acceptable square, send user to middle level and accept 2 inputs
