@@ -6,6 +6,8 @@
 
 # things to fix
     # the fact that placing things creates deadspace and makes it harder/ impossible to place things some places
+        # could just do this by moving it off to the side after making a letter. seems to only make deadarea above an bleow (chock it up to letters being silly)
+    # if you like, short circut the drawing of a won board, it mis places the thing where you clicked. lowest possible priority for this because it really shouldn't happen
 
 import turtle
 
@@ -226,6 +228,113 @@ b.fillcolor('') # makes it clear so it's just a mask above the board. kinda like
 
 boo = True # turn tracker (boo for boolean)
 
+# function to check for an ultimate (ultimate) win
+def win(character):
+    global upper
+    count = 0
+    for i in range(9):
+        if upper[i] == "x" or upper[i] == "o":
+            count += 1
+    if count > 2:
+        if upper[0] == character and upper[1] == character and upper[2] == character:
+            # top row win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324, 324 - 108)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.down()
+            t.forward(648)
+        if upper[3] == character and upper[4] == character and upper[5] == character:
+            # middle row win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324, 324 - 324)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.down()
+            t.forward(648)
+        if upper[6] == character and upper[7] == character and upper[8] == character:
+            # bottom row win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324, 324 - 540)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.down()
+            t.forward(648)
+        if upper[0] == character and upper[3] == character and upper[6] == character:
+            # left column win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324 + 108, 324)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.right(90)
+            t.down()
+            t.forward(648)
+            t.left(90)
+        if upper[1] == character and upper[4] == character and upper[7] == character:
+            # middle column win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324 + 324, 324)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.right(90)
+            t.down()
+            t.forward(648)
+            t.left(90)
+        if upper[2] == character and upper[5] == character and upper[8] == character:
+            # right column win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324 + 540, 324)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.right(90)
+            t.down()
+            t.forward(648)
+            t.left(90)
+        if upper[0] == character and upper[4] == character and upper[8] == character:
+            # top left diag win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324, 324)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.right(45)
+            t.down()
+            t.forward(916)
+            t.left(45)
+        if upper[6] == character and upper[4] == character and upper[2] == character:
+            # top right diag win
+            upper = character
+            t.up()
+            t.speed(0)
+            t.goto(-324, -324)
+            t.pencolor("purple")
+            t.pensize(10)
+            t.speed(1)
+            t.left(45)
+            t.down()
+            t.forward(916)
+            t.right(45)
+
 # function to check for a middle win/ play on upper
 def playUpper(character, arr1):
     global upper
@@ -247,6 +356,7 @@ def playUpper(character, arr1):
             t.forward(216)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            win(character)
         if upper[arr1][3] == character and upper[arr1][4] == character and upper[arr1][5] == character:
             # middle row win
             upper[arr1] = character
@@ -260,6 +370,7 @@ def playUpper(character, arr1):
             t.forward(216)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold"))
+            win(character)
         if upper[arr1][6] == character and upper[arr1][7] == character and upper[arr1][8] == character:
             # bottom row win
             upper[arr1] = character
@@ -273,6 +384,7 @@ def playUpper(character, arr1):
             t.forward(216)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold")) 
+            win(character)
         if upper[arr1][0] == character and upper[arr1][3] == character and upper[arr1][6] == character:
             # left column win
             upper[arr1] = character
@@ -288,6 +400,7 @@ def playUpper(character, arr1):
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
             b.write(character, align="center", font=("Arial", 360, "bold")) 
+            win(character)
         if upper[arr1][1] == character and upper[arr1][4] == character and upper[arr1][7] == character:
             # middle column win
             upper[arr1] = character
@@ -302,7 +415,8 @@ def playUpper(character, arr1):
             t.forward(216)
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
-            b.write(character, align="center", font=("Arial", 360, "bold")) 
+            b.write(character, align="center", font=("Arial", 360, "bold"))
+            win(character) 
         if upper[arr1][2] == character and upper[arr1][5] == character and upper[arr1][8] == character:
             # right column win
             upper[arr1] = character
@@ -317,7 +431,8 @@ def playUpper(character, arr1):
             t.forward(216)
             t.left(90)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
-            b.write(character, align="center", font=("Arial", 360, "bold")) 
+            b.write(character, align="center", font=("Arial", 360, "bold"))
+            win(character) 
         if upper[arr1][0] == character and upper[arr1][4] == character and upper[arr1][8] == character:
             # top left diag win
             upper[arr1] = character
@@ -332,7 +447,8 @@ def playUpper(character, arr1):
             t.forward(306)
             t.left(45)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
-            b.write(character, align="center", font=("Arial", 360, "bold")) 
+            b.write(character, align="center", font=("Arial", 360, "bold"))
+            win(character) 
         if upper[arr1][6] == character and upper[arr1][4] == character and upper[arr1][2] == character:
             # top right diag win
             upper[arr1] = character
@@ -347,7 +463,8 @@ def playUpper(character, arr1):
             t.forward(306)
             t.right(45)
             b.goto((-324 + ((arr1 % 3) * 216)) + 110, (324 - ((arr1 // 3) * 216)) - 280)
-            b.write(character, align="center", font=("Arial", 360, "bold")) 
+            b.write(character, align="center", font=("Arial", 360, "bold"))
+            win(character) 
 
 # function to check for a lower win/ play on middle board
 # has to come before the main click function because it will be used in the click function to save lines of code so i don't have to write basically the same code in 2 halves of an if statement
