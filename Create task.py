@@ -5,7 +5,7 @@
 # Time: idk like 2 minutes probably
 
 # things to fix
-    # if you like, short circut the drawing of a won board, it mis places the thing where you clicked. lowest possible priority for this because it really shouldn't happen
+    # if you like, short circut the drawing of a won board, it miss places the thing where you clicked. lowest possible priority for this because it really shouldn't happen
         # will likely not do this lmao. keeping here for the time being
 import turtle
 
@@ -151,7 +151,7 @@ if selection == "r":
 window = turtle.Screen()
 window.setup(648,648) # (6**4)/2 so it is "small" but easily divisible by 2 and 3 a lot
 window.bgcolor("white")
-window.title("Ultimate Ultimate Tik Tac Toe")
+window.title("Ultimate Ultimate Tic Tac Toe")
 t = turtle.Turtle()
 t.speed(0) # speeeeeeeeeeeeed
 
@@ -226,13 +226,31 @@ b.fillcolor('') # makes it clear so it's just a mask above the board. kinda like
 
 boo = True # turn tracker (boo for boolean)
 
+# doing the logic that decides where the next player should be allowed to play
+i1 = 9
+i2 = 9
+
+def midCheck(help4):
+    global i1
+    if len(upper[help4]) == 1:
+        i1 = 9
+    else:
+        i1 = help4
+
+def lowCheck(help4, help7):
+    global i2
+    if len(upper[help4][help7]) == 1:
+        i2 = 9
+    else:
+        i2 = help7
+
 # making the win statement but a function because i'm lazy and a lazy coder is a good one
 def winwindow(character):
     for i in range(20):
-        print()
+        print(".")
     window.bye()
     character = character.upper()
-    print(f"Good job player {character}!!! I personally am proud of you for winning <3")
+    print(f"Good job player {character}!!! I, personally, am proud of you for winning <3")
     print()
 
 # function to check for an ultimate (ultimate) win
@@ -242,6 +260,12 @@ def win(character):
     for i in range(9):
         if upper[i] == "x" or upper[i] == "o":
             count += 1
+    if count > 8:
+        for i in range(20):
+            print(".")
+        window.bye()
+        print(f"LMAO cat game. You both lose! Yippee!")
+        print()
     if count > 2:
         if upper[0] == character and upper[1] == character and upper[2] == character:
             # top row win
@@ -357,6 +381,8 @@ def playUpper(character, arr1):
     for i in range(9):
         if upper[arr1][i] == "x" or upper[arr1][i] == "o":
             count += 1
+    if count > 8:
+        upper[arr1] = [["c"]]
     if count > 2:
         if upper[arr1][0] == character and upper[arr1][1] == character and upper[arr1][2] == character:
             # top row win
@@ -493,14 +519,18 @@ def playUpper(character, arr1):
 # has to come before the main click function because it will be used in the click function to save lines of code so i don't have to write basically the same code in 2 halves of an if statement
 def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upper, 2nd coordinate of upper, 3rd coordinate of upper
     global upper
+    global i1
     count = 0
     for i in range(9):
         if upper[arr1][arr2][i] != "-":
             count += 1
+    if count > 8:
+        upper[arr1][arr2] = [["c"]]
     if count > 2:
         if upper[arr1][arr2][0] == character and upper[arr1][arr2][1] == character and upper[arr1][arr2][2] == character:
             # top row win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 12)
@@ -516,6 +546,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
         if upper[arr1][arr2][3] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][5] == character:
             # middle row win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 36)
@@ -531,6 +562,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
         if upper[arr1][arr2][6] == character and upper[arr1][arr2][7] == character and upper[arr1][arr2][8] == character:
             # bottom row win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 60)
@@ -546,6 +578,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
         if upper[arr1][arr2][0] == character and upper[arr1][arr2][3] == character and upper[arr1][arr2][6] == character:
             # left column win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 12, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
@@ -563,6 +596,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
         if upper[arr1][arr2][1] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][7] == character:
             # middle column win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 36, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
@@ -580,6 +614,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
         if upper[arr1][arr2][2] == character and upper[arr1][arr2][5] == character and upper[arr1][arr2][8] == character:
             # right column win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72) + 60, (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
@@ -597,6 +632,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
         if upper[arr1][arr2][0] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][8] == character:
             # top left diag win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72))
@@ -614,6 +650,7 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
         if upper[arr1][arr2][2] == character and upper[arr1][arr2][4] == character and upper[arr1][arr2][6] == character:
             # top right diag win
             upper[arr1][arr2] = character
+            midCheck(arr2)
             t.up()
             t.speed(0)
             t.goto((-324 + ((arr1 % 3) * 216)) + ((arr2 % 3) * 72), (324 - ((arr1 // 3) * 216)) - ((arr2 // 3) * 72) - 72)
@@ -630,6 +667,8 @@ def playMiddle(character, arr1, arr2): # character placed, 1st coordinate of upp
             playUpper(character, arr1)
 def click(x, y): # I think this will have to be like, the rest of my code. because ideally it does all of the checking and logic right after the click and I don't know how to do that with like, being in the mainloop thing.
     global boo # apparently, you can actually use global variables in functions
+    global i1
+    global i2
 	# makes each coordinate in the 1st quadrent but stores it's sign to reapply later
     if x >= 0:
         storex = x
@@ -692,20 +731,64 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
     help.append(((help[0] % 3) + (help[1] * 3)) % 9) # index of the lower board (all the way down to the correct square in array form! woo!)
     ### need to fix the fact that you can click again. will need to happen after can read from array correctly ### (done but keeping here until done with lower thing)
     ### will need to do that for each layer but instead of being able to draw for upper layers, not being able to send there ###
-    if upper[help[4]][help[7]][help[8]] == "-":
-        if boo:
-            upper[help[4]][help[7]][help[8]] = "o"
-            b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
-            b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
-            b.goto(-540, 0)
-            boo = False # filps turn
-        # same for "x"
-        else:
-            upper[help[4]][help[7]][help[8]] = "x"
-            b.goto(fx + 1, fy - 15)
-            b.write("x", align="center", font=("Arial", 30, "bold"))
-            b.goto(-540, 0)
-            boo = True
+    if i1 == 9:
+        if upper[help[4]][help[7]][help[8]] == "-":
+            if boo:
+                upper[help[4]][help[7]][help[8]] = "o"
+                b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                b.goto(-540, 0)
+                boo = False # filps turn
+            # same for "x"
+            else:
+                upper[help[4]][help[7]][help[8]] = "x"
+                b.goto(fx + 1, fy - 15)
+                b.write("x", align="center", font=("Arial", 30, "bold"))
+                b.goto(-540, 0)
+                boo = True
+            print(i1, i2)
+            lowCheck(help[7], help[8])
+    elif i1 != 9 and i2 == 9 and help[4] == i1:
+        if upper[help[4]][help[7]][help[8]] == "-":
+            if boo:
+                upper[help[4]][help[7]][help[8]] = "o"
+                b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                b.goto(-540, 0)
+                boo = False # filps turn
+            # same for "x"
+            else:
+                upper[help[4]][help[7]][help[8]] = "x"
+                b.goto(fx + 1, fy - 15)
+                b.write("x", align="center", font=("Arial", 30, "bold"))
+                b.goto(-540, 0)
+                boo = True
+            print(i1, i2)
+            lowCheck(help[7], help[8])
+    elif i1 != 9 and i2 != 9 and help[4] == i1 and help[7] == i2:
+        if upper[help[4]][help[7]][help[8]] == "-":
+            if boo:
+                upper[help[4]][help[7]][help[8]] = "o"
+                b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                b.goto(-540, 0)
+                boo = False # filps turn
+            # same for "x"
+            else:
+                upper[help[4]][help[7]][help[8]] = "x"
+                b.goto(fx + 1, fy - 15)
+                b.write("x", align="center", font=("Arial", 30, "bold"))
+                b.goto(-540, 0)
+                boo = True
+            print(i1, i2)
+            lowCheck(help[7], help[8])
+    else:
+        print(i1, i2)
+        pass
+
+    i1 = help[4]
+    i2 = help[7]
+    
     # check if checking for a win is needed
     if boo:
         playMiddle("x", help[4], help[7])
