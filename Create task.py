@@ -134,7 +134,7 @@ if selection == "r":
 	print("If you have ever played Ultimate Tic Tac Toe you might be able to get the gist of what Ultimate Ultimate Tic Tac Toe is. However, for the uninitiated, it is easier to explain what Ultimate Tic Tac Toe is first:")
 	print("\nIn Ultimate Tic Tac Toe there is essentially 2 layers of Tic Tac Toe boards. A larger one, and a board inside each square of that larger board. To win, you must create a line on the large board and you do that by winning 3 of the smaller boards. When you win a smaller board, your icon (X or O) goes up a layer, being placed in the square that that board you just won was on. However, there is another rule to Ultimate Tic Tac Toe that makes the board layers interact with eachother. Lets say you start the game by placing an X in the top middle space in the inner board and in the board that is in the middle space of the upper board. The other player would then be required to play in the board that is on the upper middle square of the upper layer board. The only times you aren't held to that rule is the first move of the game and when the redirection would bring you to a square that either has been won, or ended in a cat game. In either of those events, you my choose any open square to play in.")
 	print("\nNow, the step to Ultimate Ultimate Tic Tac Toe is fairly simple to understand. There is an Ultimate Tic Tac Toe board put into each square of another higher layer board. The last nuance to understand with this jump is how this new layer can be interacted with from the lower layers. The low layer can only effect the middle layer, and the middle layer can effect the upper layer (in terms of which square will be played in next).")
-	print("\nI hope you enjoy the game experience!")
+	print("\nI hope you enjoy the game experience!\n\nAdditionally, if you are still confused, I suggest just starting a game and click around a bit. Trying to follow the rules layed out as best as you understand. Your brain wraps around the interactions much easier when you get instant visual feedback from a tactile input.\n\nAs a final note, this game has only be made with 2 players in mind. That is to say, there is no option for a bot to play the other character. So if you are playing this by yourself, you will just have to play all of the time instead of half of the time.")
 	print("\nNow, input \"P\" once you are ready to play!")
 	while True:
 		selection = input("Input: ")
@@ -232,12 +232,11 @@ def winwindow(character):
     print(f"Good job player {character}!!! I personally am proud of you for winning <3")
     print()
 
+# fixing bugs with more varuables zone
 prevPlay = []
 numMedPlaced = 0
 prevNumMedPlaced = 0
 moving = False
-# canPlayUpQ = ["y", "y", "y", "y", "y", "y", "y", "y", "y"]
-# canPlayMidQ = ["y", "y", "y", "y", "y", "y", "y", "y", "y"]
 
 # function to check for an ultimate (ultimate) win
 def win(character):
@@ -716,15 +715,7 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
                     help.append(k) # y coordinate indexed 0-8
                     help.append(((help[5] % 3) + (help[6] * 3)) % 9) # index of mid board aka which lower board it is in
     help.append(((help[0] % 3) + (help[1] * 3)) % 9) # index of the lower board (all the way down to the correct square in array form! woo!)
-    ### need to fix the fact that you can click again. will need to happen after can read from array correctly ### (done but keeping here until done with lower thing)
-    ### will need to do that for each layer but instead of being able to draw for upper layers, not being able to send there ###
-    # things to fix
-        # doesn't realise that it's pointing you to an unplayable square
-            # i think this works
-        # when a middle character is placed, it keeps you in the board you started in and doesn't send you to the next place
-    # things i need to check once fixing those
-        # need to see if a medium character mapping to a filled big square will behave correctly
-            # i think this works
+
     if prevPlay != []:
         if moving:
             if len(upper[prevPlay[1]]) == 1:
@@ -942,10 +933,3 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
 b.onclick(click)
 
 turtle.mainloop() # i think this is some sort of a loop for turtle. whatever, it works
-
-# Now, do logic defining where the next player will have to play
-# Do this by taking the index of the lower board that was played on and sending the other player to that index on the middle board
-# if that isn't an acceptable square, send user to middle level and accept 2 inputs
-	# if that isn't an acceptable square, send to upper layer and accept 3 inputs (which, this goes for all layers, there needs to be a check for if the layer selected is allowed)
-# examples on unplayable boards are either boards that are won or boards that ended in a cat game
-    # also, just to be sure, also don't want someone to be able to play on a board lower than a board that has been won. just as redundancy
