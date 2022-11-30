@@ -235,6 +235,7 @@ def winwindow(character):
 prevPlay = []
 numMedPlaced = 0
 prevNumMedPlaced = 0
+moving = False
 # canPlayUpQ = ["y", "y", "y", "y", "y", "y", "y", "y", "y"]
 # canPlayMidQ = ["y", "y", "y", "y", "y", "y", "y", "y", "y"]
 
@@ -654,6 +655,7 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
     global prevPlay
     global numMedPlaced
     global prevNumMedPlaced
+    global moving
 	# makes each coordinate in the 1st quadrent but stores it's sign to reapply later
     if x >= 0:
         storex = x
@@ -717,31 +719,184 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
     ### need to fix the fact that you can click again. will need to happen after can read from array correctly ### (done but keeping here until done with lower thing)
     ### will need to do that for each layer but instead of being able to draw for upper layers, not being able to send there ###
     # things to fix
-    # doesn't realise that it's pointing you to an unplayable square
-    # when a middle character is placed, it keeps you in the board you started in and doesn't send you to the next place
+        # doesn't realise that it's pointing you to an unplayable square
+            # i think this works
+        # when a middle character is placed, it keeps you in the board you started in and doesn't send you to the next place
+    # things i need to check once fixing those
+        # need to see if a medium character mapping to a filled big square will behave correctly
+            # i think this works
     if prevPlay != []:
-        if numMedPlaced != prevNumMedPlaced:
-            prevNumMedPlaced = numMedPlaced
+        if moving:
             if len(upper[prevPlay[1]]) == 1:
                 if upper[help[4]][help[7]][help[8]] == "-":
-                        if boo:
-                            upper[help[4]][help[7]][help[8]] = "o"
-                            prevPlay = [help[4], help[7], help[8]]
-                            b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
-                            b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
-                            b.goto(-540, 0)
-                            boo = False # filps turn
-                        # same for "x"
-                        else:
-                            upper[help[4]][help[7]][help[8]] = "x"
-                            prevPlay = [help[4], help[7], help[8]]
-                            b.goto(fx + 1, fy - 15)
-                            b.write("x", align="center", font=("Arial", 30, "bold"))
-                            b.goto(-540, 0)
-                            boo = True
+                    moving = False
+                    if boo:
+                        upper[help[4]][help[7]][help[8]] = "o"
+                        prevPlay = [help[4], help[7], help[8]]
+                        b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                        b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                        b.goto(-540, 0)
+                        boo = False # filps turn
+                    # same for "x"
+                    else:
+                        upper[help[4]][help[7]][help[8]] = "x"
+                        prevPlay = [help[4], help[7], help[8]]
+                        b.goto(fx + 1, fy - 15)
+                        b.write("x", align="center", font=("Arial", 30, "bold"))
+                        b.goto(-540, 0)
+                        boo = True
+                else:
+                    pass
             else:
-                if help[4] == prevPlay[1]:
-                    if len(upper[prevPlay[1]][prevPlay[2]]) == 1:
+                # this seems right but is like, almost certainly the problem
+                if help[4] == prevPlay[1]: # might need to add/ change
+                    if len(upper[prevPlay[0]][prevPlay[2]]) == 1:
+                        if help[7] != prevPlay[2]: # i think this is right
+                            if upper[help[4]][help[7]][help[8]] == "-":
+                                moving = False
+                                if boo:
+                                    upper[help[4]][help[7]][help[8]] = "o"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                                    b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                                    b.goto(-540, 0)
+                                    boo = False # filps turn
+                                # same for "x"
+                                else:
+                                    upper[help[4]][help[7]][help[8]] = "x"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15)
+                                    b.write("x", align="center", font=("Arial", 30, "bold"))
+                                    b.goto(-540, 0)
+                                    boo = True
+                            else:
+                                pass
+                        else:
+                            pass
+                    else:
+                        # this also seems right btw
+                        if help[7] == prevPlay[2]: # might need to add/ change
+                            if upper[help[4]][help[7]][help[8]] == "-":
+                                moving = False
+                                if boo:
+                                    upper[help[4]][help[7]][help[8]] = "o"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                                    b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                                    b.goto(-540, 0)
+                                    boo = False # filps turn
+                                # same for "x"
+                                else:
+                                    upper[help[4]][help[7]][help[8]] = "x"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15)
+                                    b.write("x", align="center", font=("Arial", 30, "bold"))
+                                    b.goto(-540, 0)
+                                    boo = True
+                            else:
+                                pass
+                        else:
+                            pass
+                else:
+                    pass
+
+        if numMedPlaced != prevNumMedPlaced:
+            prevNumMedPlaced = numMedPlaced
+            moving = True
+            if len(upper[prevPlay[1]]) == 1:
+                if upper[help[4]][help[7]][help[8]] == "-":
+                    moving = False
+                    if boo:
+                        upper[help[4]][help[7]][help[8]] = "o"
+                        prevPlay = [help[4], help[7], help[8]]
+                        b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                        b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                        b.goto(-540, 0)
+                        boo = False # filps turn
+                    # same for "x"
+                    else:
+                        upper[help[4]][help[7]][help[8]] = "x"
+                        prevPlay = [help[4], help[7], help[8]]
+                        b.goto(fx + 1, fy - 15)
+                        b.write("x", align="center", font=("Arial", 30, "bold"))
+                        b.goto(-540, 0)
+                        boo = True
+                else:
+                    pass
+            else:
+                # this seems right but is like, almost certainly the problem
+                if help[4] == prevPlay[1]: # might need to add/ change
+                    if len(upper[prevPlay[0]][prevPlay[2]]) == 1:
+                        if help[7] != prevPlay[2]: # i think this is right
+                            if upper[help[4]][help[7]][help[8]] == "-":
+                                moving = False
+                                if boo:
+                                    upper[help[4]][help[7]][help[8]] = "o"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                                    b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                                    b.goto(-540, 0)
+                                    boo = False # filps turn
+                                # same for "x"
+                                else:
+                                    upper[help[4]][help[7]][help[8]] = "x"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15)
+                                    b.write("x", align="center", font=("Arial", 30, "bold"))
+                                    b.goto(-540, 0)
+                                    boo = True
+                            else:
+                                pass
+                        else:
+                            pass
+                    else:
+                        # this also seems right btw
+                        if help[7] == prevPlay[2]: # might need to add/ change
+                            if upper[help[4]][help[7]][help[8]] == "-":
+                                moving = False
+                                if boo:
+                                    upper[help[4]][help[7]][help[8]] = "o"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                                    b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                                    b.goto(-540, 0)
+                                    boo = False # filps turn
+                                # same for "x"
+                                else:
+                                    upper[help[4]][help[7]][help[8]] = "x"
+                                    prevPlay = [help[4], help[7], help[8]]
+                                    b.goto(fx + 1, fy - 15)
+                                    b.write("x", align="center", font=("Arial", 30, "bold"))
+                                    b.goto(-540, 0)
+                                    boo = True
+                            else:
+                                pass
+                        else:
+                            pass
+                else:
+                    pass
+        else:
+            if not moving:
+                if len(upper[prevPlay[0]][prevPlay[2]]) == 1:
+                    if help[4] == prevPlay[0] and help[7] != prevPlay[2]:
+                        if upper[help[4]][help[7]][help[8]] == "-":
+                            if boo:
+                                upper[help[4]][help[7]][help[8]] = "o"
+                                prevPlay = [help[4], help[7], help[8]]
+                                b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
+                                b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
+                                b.goto(-540, 0)
+                                boo = False # filps turn
+                            # same for "x"
+                            else:
+                                upper[help[4]][help[7]][help[8]] = "x"
+                                prevPlay = [help[4], help[7], help[8]]
+                                b.goto(fx + 1, fy - 15)
+                                b.write("x", align="center", font=("Arial", 30, "bold"))
+                                b.goto(-540, 0)
+                                boo = True
+                else:
+                    if help[4] == prevPlay[0] and help[7] == prevPlay[2]:
                         if upper[help[4]][help[7]][help[8]] == "-":
                             if boo:
                                 upper[help[4]][help[7]][help[8]] = "o"
@@ -759,66 +914,7 @@ def click(x, y): # I think this will have to be like, the rest of my code. becau
                                 b.goto(-540, 0)
                                 boo = True
                     else:
-                        if help[7] == prevPlay[2]:
-                            if upper[help[4]][help[7]][help[8]] == "-":
-                                if boo:
-                                    upper[help[4]][help[7]][help[8]] = "o"
-                                    prevPlay = [help[4], help[7], help[8]]
-                                    b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
-                                    b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
-                                    b.goto(-540, 0)
-                                    boo = False # filps turn
-                                # same for "x"
-                                else:
-                                    upper[help[4]][help[7]][help[8]] = "x"
-                                    prevPlay = [help[4], help[7], help[8]]
-                                    b.goto(fx + 1, fy - 15)
-                                    b.write("x", align="center", font=("Arial", 30, "bold"))
-                                    b.goto(-540, 0)
-                                    boo = True
-                        else:
-                            pass
-                else:
-                    pass
-        else:
-            if len(upper[prevPlay[1]][prevPlay[2]]) == 1:
-                if help[4] == prevPlay[0]:
-                    if upper[help[4]][help[7]][help[8]] == "-":
-                        if boo:
-                            upper[help[4]][help[7]][help[8]] = "o"
-                            prevPlay = [help[4], help[7], help[8]]
-                            b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
-                            b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
-                            b.goto(-540, 0)
-                            boo = False # filps turn
-                        # same for "x"
-                        else:
-                            upper[help[4]][help[7]][help[8]] = "x"
-                            prevPlay = [help[4], help[7], help[8]]
-                            b.goto(fx + 1, fy - 15)
-                            b.write("x", align="center", font=("Arial", 30, "bold"))
-                            b.goto(-540, 0)
-                            boo = True
-            else:
-                if help[4] == prevPlay[0] and help[7] == prevPlay[2]:
-                    if upper[help[4]][help[7]][help[8]] == "-":
-                        if boo:
-                            upper[help[4]][help[7]][help[8]] = "o"
-                            prevPlay = [help[4], help[7], help[8]]
-                            b.goto(fx + 1, fy - 15) # goes to confirmed best place (the +1 and -15 are just what i found to be the actual correct center in terms of how the letter is "typed")
-                            b.write("o", align="center", font=("Arial", 30, "bold")) # prints character
-                            b.goto(-540, 0)
-                            boo = False # filps turn
-                        # same for "x"
-                        else:
-                            upper[help[4]][help[7]][help[8]] = "x"
-                            prevPlay = [help[4], help[7], help[8]]
-                            b.goto(fx + 1, fy - 15)
-                            b.write("x", align="center", font=("Arial", 30, "bold"))
-                            b.goto(-540, 0)
-                            boo = True
-                else:
-                    pass
+                        pass
     else:
         if upper[help[4]][help[7]][help[8]] == "-":
             if boo:
